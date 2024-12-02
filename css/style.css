@@ -1,0 +1,168 @@
+@import url("../css/initialize.css");
+body,
+html {
+  height: 100%;
+}
+
+/* unvisited link */
+a:link {
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  background-color: azure;
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+#slider {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: opacity 3s;
+  transition: opacity 3s;
+}
+
+.slide:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+
+#infobox {
+  position: fixed;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 2px 1fr 2px auto 2px 1fr;
+  grid-template-rows: 1fr 1fr auto 1fr;
+      grid-template-areas: "row1" "row2" "row3" "row4";
+  top: 30px;
+  left: 30px;
+  max-width: 50%;
+  gap: 2px;
+  padding: 2px;
+  background-color: rgb(76, 46, 185);
+  color: black;
+  z-index: 5;
+  border-radius: 4px;
+}
+
+.row1,
+.row2,
+.row3,
+.row4 {
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+.row1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: row1;
+  background-color: lightgrey;
+}
+
+.row2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: row2;
+  background-color: rgb(212, 85, 16);
+}
+
+.row3 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: row3;
+  background-color: rgb(52, 35, 88);
+  color: wheat;
+}
+
+.row4 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: row4;
+  background-color: rgb(130, 91, 70);
+}
+
+.fname,
+.ftext,
+.fdate,
+.fdesc,
+#scount {
+  position: fixed;
+  display: none;
+  padding: 2px;
+  background-color: rgb(76, 46, 185);
+  color: white;
+  z-index: 5;
+  border-radius: 4px;
+}
+
+.fname {
+  top: 30px;
+  left: 30px;
+}
+
+.ftext {
+  top: 60px;
+  left: 30px;
+}
+
+.fdate {
+  top: 90px;
+  left: 30px;
+}
+
+.fdesc {
+  top: 120px;
+  left: 30px;
+}
+
+#scount {
+  display: block;
+  padding: 0 6px;
+  top: 30px;
+  right: 30px;
+}
+
+a.button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background-color: rgb(76, 46, 185);
+  font-size: x-large;
+  color: bisque;
+  padding: 0 6px;
+  border-radius: 4px;
+  z-index: 10;
+}
+a.button:hover {
+  background-color: azure;
+  color: black;
+}
