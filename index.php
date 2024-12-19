@@ -1,13 +1,7 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=UTF-8');
-if (isset($_SESSION['orientation'])) {
-  $orientation = $_SESSION['orientation'];
-} else {
-  $orientation = 'portrait'; //defaults to phone
-}
-
 require "db.php";
+$orientation = $_COOKIE['device_orientation'] ?? 'unknown';
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +11,20 @@ require "db.php";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slideshow</title>
+  <script src="js/detectOI.js" defer></script>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+
+<!-- <div class="sessionv">
+      <?php
+      //$printR = print_r($_SESSION, true);
+      //echo str_replace('[', '<br>[', $printR);
+      ?>
+</div> -->
+
   <div id="infobox">
     <div class="row1"></div>
     <div class="row2"></div>
@@ -53,6 +56,7 @@ require "db.php";
       ?>
       <div id="scount"></div>
       <a class="button" href="page2.php">Find out more</a>
+      <a class="button" href="flipcard.php">sales squares</a>
     </div>
 
   <?php

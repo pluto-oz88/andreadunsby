@@ -1,4 +1,21 @@
 @import url("../css/initialize.css");
+
+.sessionv {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  background-color: rgb(19, 43, 37);
+  color: white;
+  padding: 3px;
+  border: 2px solid rgb(227, 210, 210);
+  border-radius: 10px;
+  z-index: 10000;
+}
+
 body,
 html {
   height: 100%;
@@ -42,7 +59,6 @@ a:active {
   background-repeat: no-repeat;
   z-index: 1;
   opacity: 0;
-  -webkit-transition: opacity 3s;
   transition: opacity 3s;
 }
 
@@ -53,13 +69,14 @@ a:active {
 
 #infobox {
   position: fixed;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr 2px 1fr 2px auto 2px 1fr;
   grid-template-rows: 1fr 1fr auto 1fr;
-      grid-template-areas: "row1" "row2" "row3" "row4";
+  grid-template-areas:
+    "row1"
+    "row2"
+    "row3"
+    "row4";
   top: 30px;
   left: 30px;
   max-width: 50%;
@@ -80,30 +97,21 @@ a:active {
 }
 
 .row1 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: row1;
   background-color: lightgrey;
 }
 
 .row2 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
   grid-area: row2;
   background-color: rgb(212, 85, 16);
 }
-
 .row3 {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
   grid-area: row3;
   background-color: rgb(52, 35, 88);
   color: wheat;
 }
 
 .row4 {
-  -ms-grid-row: 7;
-  -ms-grid-column: 1;
   grid-area: row4;
   background-color: rgb(130, 91, 70);
 }
@@ -126,22 +134,18 @@ a:active {
   top: 30px;
   left: 30px;
 }
-
 .ftext {
   top: 60px;
   left: 30px;
 }
-
 .fdate {
   top: 90px;
   left: 30px;
 }
-
 .fdesc {
   top: 120px;
   left: 30px;
 }
-
 #scount {
   display: block;
   padding: 0 6px;
@@ -153,16 +157,18 @@ a.button {
   position: absolute;
   bottom: 10px;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   background-color: rgb(76, 46, 185);
   font-size: x-large;
   color: bisque;
   padding: 0 6px;
   border-radius: 4px;
   z-index: 10;
-}
-a.button:hover {
-  background-color: azure;
-  color: black;
+  &:hover {
+    background-color: azure;
+    color: black;
+  }
+  &:nth-of-type(2) {
+    bottom: 60px;
+  }
 }

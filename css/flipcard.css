@@ -1,0 +1,154 @@
+:root {
+  --br: 4px;
+  --gap: 8px;
+}
+
+html {
+  color-scheme: dark;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  margin-inline: auto;
+  /* height: 400px;
+  width: 900px; */
+}
+.avatar {
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.flip-card {
+  background-color: transparent;
+  /* background-color: hsla(0, 100%, 50%, 0.2); */
+  width: 100%;
+  aspect-ratio: 1;
+  /* height: 300px; */
+  /* height: 400px;
+  width: 400px; */
+  perspective: 1000px;
+  border: dotted 2px yellow;
+  border-radius: var(--br);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: var(--br);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--br);
+}
+
+.flip-card-front {
+  background-image: url("../photos/bground/IMG_2581.JPG");
+  background-size: cover;
+  background-color: #bbb;
+  color: black;
+  &:after {
+    /*FADE EFFECT*/
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    height: 40%;
+    border-radius: var(--br);
+  }
+}
+
+.flip-card-back {
+  background-image: url("../photos/bground/IMG_2574.JPG");
+  background-size: cover;
+  background-color: #bbb;
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+body {
+  margin: var(--gap);
+}
+
+.flip-card:nth-of-type(2) {
+  .flip-card-inner {
+    .flip-card-front {
+      background-image: url("../photos/bground/IMG_2577.JPG");
+    }
+    .flip-card-back {
+      background-image: url("../photos/bground/IMG_2579.JPG");
+    }
+  }
+}
+
+.flip-card:nth-of-type(3) {
+  .flip-card-inner {
+    .flip-card-front {
+      background-image: url("../photos/bground/vImage004.jpg");
+    }
+    .flip-card-back {
+      background-image: url("../photos/bground/IMG_2612.JPG");
+    }
+  }
+}
+
+.flip-card:nth-of-type(4) {
+  .flip-card-front {
+    background-image: url("../photos/bground/IMG_2580.JPG");
+  }
+  .flip-card-back {
+    background-image: url("../photos/bground/IMG_2619.JPG");
+  }
+}
+
+.flip-card:nth-of-type(5) {
+  .flip-card-inner {
+    .flip-card-front {
+      background-image: url("../photos/bground/vImage001.jpg");
+    }
+    .flip-card-back {
+      background-image: url("../photos/bground/vImage002.jpg");
+    }
+  }
+}
+
+.flip-card:nth-of-type(6) {
+  .flip-card-front {
+    background-image: url("../photos/bground/IMG_2616.JPG");
+  }
+  .flip-card-back {
+    background-image: url("../photos/bground/IMG_2586.JPG");
+  }
+}
